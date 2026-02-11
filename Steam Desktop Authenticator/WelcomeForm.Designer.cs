@@ -1,4 +1,4 @@
-﻿namespace Steam_Desktop_Authenticator
+namespace Steam_Desktop_Authenticator
 {
     partial class WelcomeForm
     {
@@ -94,6 +94,7 @@
             this.Name = "WelcomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Steam Desktop Authenticator";
+            this.Load += new System.EventHandler(this.WelcomeForm_Load);
             this.ResumeLayout(false);
 
         }

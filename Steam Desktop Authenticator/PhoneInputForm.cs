@@ -1,4 +1,4 @@
-﻿using SteamAuth;
+using SteamAuth;
 using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -16,6 +16,11 @@ namespace Steam_Desktop_Authenticator
         {
             this.Account = account;
             InitializeComponent();
+        }
+
+        private void PhoneInputForm_Load(object sender, EventArgs e)
+        {
+            DarkTheme.Apply(this);
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

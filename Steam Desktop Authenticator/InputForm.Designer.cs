@@ -1,4 +1,4 @@
-﻿namespace Steam_Desktop_Authenticator
+namespace Steam_Desktop_Authenticator
 {
     partial class InputForm
     {
@@ -37,26 +37,31 @@
             // 
             // labelText
             // 
+            this.labelText.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelText.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelText.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelText.Location = new System.Drawing.Point(12, 9);
             this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(383, 159);
+            this.labelText.Size = new System.Drawing.Size(407, 159);
             this.labelText.TabIndex = 0;
             this.labelText.Text = "Sample Text~~~";
+            this.labelText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtBox
             // 
+            this.txtBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox.Location = new System.Drawing.Point(12, 171);
             this.txtBox.Name = "txtBox";
             this.txtBox.Size = new System.Drawing.Size(383, 33);
             this.txtBox.TabIndex = 1;
+            this.txtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(15, 210);
+            this.btnAccept.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAccept.Location = new System.Drawing.Point(12, 210);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(98, 28);
             this.btnAccept.TabIndex = 2;
@@ -66,6 +71,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(297, 210);
             this.btnCancel.Name = "btnCancel";
@@ -82,10 +88,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(407, 250);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAccept);
-            this.Controls.Add(this.txtBox);
             this.Controls.Add(this.labelText);
+            this.Controls.Add(this.txtBox);
+            this.Controls.Add(this.btnAccept);
+            this.Controls.Add(this.btnCancel);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -93,6 +99,7 @@
             this.Name = "InputForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.InputForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InputForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

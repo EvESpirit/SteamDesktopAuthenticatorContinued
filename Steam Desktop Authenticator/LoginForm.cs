@@ -353,6 +353,7 @@ namespace Steam_Desktop_Authenticator
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            DarkTheme.Apply(this);
             if (account != null && account.AccountName != null)
             {
                 txtUsername.Text = account.AccountName;

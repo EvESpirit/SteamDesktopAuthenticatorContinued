@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +23,7 @@ namespace Steam_Desktop_Authenticator
 
         private void ListInputForm_Load(object sender, EventArgs e)
         {
+            DarkTheme.Apply(this);
             foreach (var item in Items)
             {
                 lbItems.Items.Add(item);

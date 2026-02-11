@@ -1,4 +1,4 @@
-﻿namespace Steam_Desktop_Authenticator
+namespace Steam_Desktop_Authenticator
 {
     partial class ConfirmationFormWeb
     {
@@ -74,6 +74,7 @@
             this.Name = "ConfirmationFormWeb";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Trade Confirmations";
+            this.Load += new System.EventHandler(this.ConfirmationFormWeb_Load);
             this.Shown += new System.EventHandler(this.ConfirmationFormWeb_Shown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

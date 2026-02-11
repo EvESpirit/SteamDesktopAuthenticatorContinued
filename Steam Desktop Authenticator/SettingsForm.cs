@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 
 namespace Steam_Desktop_Authenticator
@@ -24,6 +24,11 @@ namespace Steam_Desktop_Authenticator
             SetControlsEnabledState(chkPeriodicChecking.Checked);
 
             fullyLoaded = true;
+        }
+
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            DarkTheme.Apply(this);
         }
 
         private void SetControlsEnabledState(bool enabled)

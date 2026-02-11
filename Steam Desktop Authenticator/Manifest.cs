@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using SteamAuth;
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,9 @@ namespace Steam_Desktop_Authenticator
 
         [JsonProperty("auto_confirm_trades")]
         public bool AutoConfirmTrades { get; set; } = false;
+
+        [JsonProperty("use_dark_theme")]
+        public bool UseDarkTheme { get; set; } = true;
 
         private static Manifest _manifest { get; set; }
 
@@ -98,6 +101,7 @@ namespace Steam_Desktop_Authenticator
             newManifest.PeriodicChecking = false;
             newManifest.AutoConfirmMarketTransactions = false;
             newManifest.AutoConfirmTrades = false;
+            newManifest.UseDarkTheme = true;
             newManifest.Entries = new List<ManifestEntry>();
             newManifest.FirstRun = true;
 
@@ -161,7 +165,7 @@ namespace Steam_Desktop_Authenticator
             string passKey = null;
             while (!passKeyValid)
             {
-                InputForm passKeyForm = new InputForm("Please enter your encryption passkey.", true);
+                InputForm passKeyForm = new InputForm("Please enter your encryption passkey.", true, "Encryption passkey");
                 passKeyForm.ShowDialog();
                 if (!passKeyForm.Canceled)
                 {

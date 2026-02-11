@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,15 +15,22 @@ namespace Steam_Desktop_Authenticator
         public bool Canceled = false;
         private bool userClosed = true;
 
-        public InputForm(string label, bool password = false)
+        public InputForm(string label, bool password = false, string title = null)
         {
             InitializeComponent();
             this.labelText.Text = label;
+            if (!string.IsNullOrEmpty(title))
+                this.Text = title;
 
             if (password)
             {
                 this.txtBox.PasswordChar = '*';
             }
+        }
+
+        private void InputForm_Load(object sender, EventArgs e)
+        {
+            DarkTheme.Apply(this);
         }
 
         private void btnAccept_Click(object sender, EventArgs e)

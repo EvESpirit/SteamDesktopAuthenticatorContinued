@@ -24,6 +24,11 @@ namespace Steam_Desktop_Authenticator
             this.mManifest = Manifest.GetManifest();
         }
 
+        private void ImportAccountForm_Load(object sender, EventArgs e)
+        {
+            DarkTheme.Apply(this);
+        }
+
         private void btnImport_Click(object sender, EventArgs e)
         {
             // check if data already added is encripted

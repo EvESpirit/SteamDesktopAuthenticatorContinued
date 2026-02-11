@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 using SteamAuth;
@@ -98,7 +98,26 @@ namespace Steam_Desktop_Authenticator
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            try
+            {
+                var m = Manifest.GetManifest();
+                DarkTheme.Enabled = m.UseDarkTheme;
+                menuDarkMode.Checked = m.UseDarkTheme;
+            }
+            catch { /* use defaults: dark theme, checked */ }
+            DarkTheme.Apply(this);
             trayIcon.Icon = this.Icon;
+        }
+
+        private void menuDarkMode_Click(object sender, EventArgs e)
+        {
+            manifest.UseDarkTheme = menuDarkMode.Checked;
+            manifest.Save();
+            DarkTheme.Enabled = manifest.UseDarkTheme;
+            if (DarkTheme.Enabled)
+                DarkTheme.Apply(this);
+            else
+                DarkTheme.ApplyLight(this);
         }
 
         private void MainForm_Resize(object sender, EventArgs e)

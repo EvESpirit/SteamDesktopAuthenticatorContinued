@@ -1,4 +1,4 @@
-﻿namespace Steam_Desktop_Authenticator
+namespace Steam_Desktop_Authenticator
 {
 
     partial class MainForm
@@ -47,6 +47,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuImportAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuDarkMode = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -235,6 +236,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuImportAccount,
             this.toolStripSeparator1,
+            this.menuDarkMode,
             this.menuSettings,
             this.menuQuit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -252,6 +254,14 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(155, 6);
+            // 
+            // menuDarkMode
+            // 
+            this.menuDarkMode.CheckOnClick = true;
+            this.menuDarkMode.Name = "menuDarkMode";
+            this.menuDarkMode.Size = new System.Drawing.Size(158, 22);
+            this.menuDarkMode.Text = "Dark mode";
+            this.menuDarkMode.Click += new System.EventHandler(this.menuDarkMode_Click);
             // 
             // menuSettings
             // 
@@ -479,6 +489,7 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem menuDarkMode;
         private System.Windows.Forms.ToolStripMenuItem menuQuit;
         private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuRemoveAccountFromManifest;

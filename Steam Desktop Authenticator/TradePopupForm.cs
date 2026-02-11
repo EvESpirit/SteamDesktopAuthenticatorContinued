@@ -1,4 +1,4 @@
-﻿using SteamAuth;
+using SteamAuth;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +37,7 @@ namespace Steam_Desktop_Authenticator
 
         private void TradePopupForm_Load(object sender, EventArgs e)
         {
+            DarkTheme.Apply(this);
             this.Location = (Point)Size.Subtract(Screen.GetWorkingArea(this).Size, this.Size);
         }
 
@@ -79,8 +80,8 @@ namespace Steam_Desktop_Authenticator
         {
             deny2 = false;
             accept2 = false;
-            btnAccept.BackColor = Color.FromArgb(192, 255, 192);
-            btnDeny.BackColor = Color.FromArgb(255, 255, 192);
+            btnAccept.BackColor = DarkTheme.AcceptButton;
+            btnDeny.BackColor = DarkTheme.DenyButton;
 
             btnAccept.Text = "Accept";
             btnDeny.Text = "Deny";

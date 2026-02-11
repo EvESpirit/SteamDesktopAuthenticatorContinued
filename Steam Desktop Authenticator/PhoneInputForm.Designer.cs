@@ -1,4 +1,4 @@
-﻿namespace Steam_Desktop_Authenticator
+namespace Steam_Desktop_Authenticator
 {
     partial class PhoneInputForm
     {
@@ -143,6 +143,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PhoneInputForm";
+            this.Load += new System.EventHandler(this.PhoneInputForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

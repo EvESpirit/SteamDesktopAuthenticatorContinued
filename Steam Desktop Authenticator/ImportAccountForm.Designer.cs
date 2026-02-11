@@ -89,6 +89,7 @@ namespace Steam_Desktop_Authenticator
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Import Account";
+            this.Load += new System.EventHandler(this.ImportAccountForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Import_maFile_Form_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

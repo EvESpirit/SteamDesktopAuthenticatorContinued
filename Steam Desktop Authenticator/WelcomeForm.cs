@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +19,11 @@ namespace Steam_Desktop_Authenticator
         {
             InitializeComponent();
             man = Manifest.GetManifest();
+        }
+
+        private void WelcomeForm_Load(object sender, EventArgs e)
+        {
+            DarkTheme.Apply(this);
         }
 
         private void btnJustStart_Click(object sender, EventArgs e)

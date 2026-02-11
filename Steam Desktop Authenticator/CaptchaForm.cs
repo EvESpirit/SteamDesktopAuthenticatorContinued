@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +29,11 @@ namespace Steam_Desktop_Authenticator
             this.CaptchaURL = "https://steamcommunity.com/public/captcha.php?gid=" + GID;
             InitializeComponent();
             this.pictureBoxCaptcha.Load(CaptchaURL);
+        }
+
+        private void CaptchaForm_Load(object sender, EventArgs e)
+        {
+            DarkTheme.Apply(this);
         }
 
         private void btnAccept_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -139,8 +139,23 @@ namespace Steam_Desktop_Authenticator
         {
             var button = (ConfirmationButton)sender;
             var confirmation = button.Confirmation;
-            bool result = await steamAccount.AcceptConfirmation(confirmation);
-
+            button.Enabled = false;
+            try
+            {
+                bool result = await steamAccount.AcceptConfirmation(confirmation);
+                if (!result)
+                {
+                    MessageBox.Show("Failed to accept. Your session may have expired, or Steam may require you to accept the trade restrictions popup in a browser first (log in at steamcommunity.com → Inventory → Trade Offers).", "Trade Confirmations", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error accepting: " + ex.Message, "Trade Confirmations", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                button.Enabled = true;
+            }
             await this.LoadData();
         }
 
@@ -148,8 +163,23 @@ namespace Steam_Desktop_Authenticator
         {
             var button = (ConfirmationButton)sender;
             var confirmation = button.Confirmation;
-            bool result = await steamAccount.DenyConfirmation(confirmation);
-
+            button.Enabled = false;
+            try
+            {
+                bool result = await steamAccount.DenyConfirmation(confirmation);
+                if (!result)
+                {
+                    MessageBox.Show("Failed to deny confirmation. Your session may have expired.", "Trade Confirmations", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error denying: " + ex.Message, "Trade Confirmations", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                button.Enabled = true;
+            }
             await this.LoadData();
         }
 
@@ -163,6 +193,11 @@ namespace Steam_Desktop_Authenticator
 
             this.btnRefresh.Enabled = true;
             this.btnRefresh.Text = "Refresh";
+        }
+
+        private void ConfirmationFormWeb_Load(object sender, EventArgs e)
+        {
+            DarkTheme.Apply(this);
         }
 
         private async void ConfirmationFormWeb_Shown(object sender, EventArgs e)
